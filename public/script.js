@@ -1,3 +1,5 @@
+// catálogo
+
 const catalogo = [
 
     {
@@ -101,3 +103,169 @@ const catalogo = [
     }
 
 ];
+
+
+// console
+
+console.log(catalogo);
+
+console.log("Primeiro título:");
+console.log(catalogo[0].titulo);
+
+console.log("Ano do último item:");
+console.log(catalogo[catalogo.length - 1].ano);
+
+console.log("Segundo gênero do terceiro item:");
+
+if (catalogo[2].generos[1]) {
+
+    console.log(catalogo[2].generos[1]);
+
+} else {
+
+    console.log("O terceiro item possui apenas um gênero.");
+
+}
+
+
+// forEach
+
+catalogo.forEach(item => {
+
+    console.log(
+        `- [${item.tipo}] ${item.titulo} (${item.ano})`
+    );
+
+});
+
+
+// map
+
+const titulosEmCaixaAlta = catalogo.map(item =>
+    item.titulo.toUpperCase()
+);
+
+console.log(titulosEmCaixaAlta);
+
+
+// filter
+
+const naoAssistidos = catalogo.filter(item =>
+    item.assistido === false
+);
+
+console.log(
+    `Quantidade de não assistidos: ${naoAssistidos.length}`
+);
+
+
+// B.3.D - find
+
+const notaAlta = catalogo.find(item =>
+    item.nota >= 9
+);
+
+if (notaAlta) {
+
+    console.log(
+        `${notaAlta.titulo} - Nota: ${notaAlta.nota}`
+    );
+
+} else {
+
+    console.log("Nenhum item possui nota maior ou igual a 9.");
+
+}
+
+
+// B.3.E - reduce
+
+const somaNotas = catalogo.reduce(
+    (acumulador, item) => acumulador + item.nota,
+    0
+);
+
+const mediaGeral = somaNotas / catalogo.length;
+
+console.log(
+    `Média geral: ${mediaGeral.toFixed(2)}`
+);
+
+
+const assistidos = catalogo.filter(item =>
+    item.assistido === true
+);
+
+const somaAssistidos = assistidos.reduce(
+    (acumulador, item) => acumulador + item.nota,
+    0
+);
+
+const mediaAssistidos =
+    somaAssistidos / assistidos.length;
+
+console.log(
+    `Média dos assistidos: ${mediaAssistidos.toFixed(2)}`
+);
+
+
+// B.3.F - some e every
+
+const existeAntigo = catalogo.some(item =>
+    item.ano < 2000
+);
+
+console.log(
+    `Existe item anterior a 2000? ${existeAntigo}`
+);
+
+
+const todosTemGenero = catalogo.every(item =>
+    item.generos.length > 0
+);
+
+console.log(
+    `Todos possuem gênero? ${todosTemGenero}`
+);
+
+
+// DOM
+
+const totalFilmes = catalogo.filter(item =>
+    item.tipo === "filme"
+).length;
+
+const totalSeries = catalogo.filter(item =>
+    item.tipo === "serie"
+).length;
+
+
+// ranking
+const ranking = [...catalogo]
+    .sort((a, b) => b.nota - a.nota)
+    .slice(0, 3);
+
+
+document.getElementById("output").innerHTML = `
+
+<h2>Resumo do Catálogo</h2>
+
+<p>Total de itens: ${catalogo.length}</p>
+
+<p>Total de filmes: ${totalFilmes}</p>
+
+<p>Total de séries: ${totalSeries}</p>
+
+<p>Não assistidos: ${naoAssistidos.length}</p>
+
+<p>Média geral: ${mediaGeral.toFixed(2)}</p>
+
+<h3>Top 3</h3>
+
+<ul>
+    ${ranking.map(item =>
+    `<li>${item.titulo} - ${item.nota}</li>`
+).join("")}
+</ul>
+
+`;
