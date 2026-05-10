@@ -159,7 +159,7 @@ console.log(
 );
 
 
-// B.3.D - find
+// find
 
 const notaAlta = catalogo.find(item =>
     item.nota >= 9
@@ -178,7 +178,7 @@ if (notaAlta) {
 }
 
 
-// B.3.E - reduce
+// reduce
 
 const somaNotas = catalogo.reduce(
     (acumulador, item) => acumulador + item.nota,
@@ -209,14 +209,14 @@ console.log(
 );
 
 
-// B.3.F - some e every
+// some e every
 
 const existeAntigo = catalogo.some(item =>
     item.ano < 2000
 );
 
 console.log(
-    `Existe item anterior a 2000? ${existeAntigo}`
+    `Existe algum item anterior a 2000? ${existeAntigo}`
 );
 
 
@@ -239,26 +239,25 @@ const totalSeries = catalogo.filter(item =>
     item.tipo === "serie"
 ).length;
 
-
 // ranking
 const ranking = [...catalogo]
     .sort((a, b) => b.nota - a.nota)
     .slice(0, 3);
 
-
+    
 document.getElementById("output").innerHTML = `
 
 <h2>Resumo do Catálogo</h2>
 
-<p>Total de itens: ${catalogo.length}</p>
+<p><b>Total de itens:</b> ${catalogo.length}</p>
 
-<p>Total de filmes: ${totalFilmes}</p>
+<p><b>Total de filmes:</b> ${totalFilmes}</p>
 
-<p>Total de séries: ${totalSeries}</p>
+<p><b>Total de séries:</b> ${totalSeries}</p>
 
-<p>Não assistidos: ${naoAssistidos.length}</p>
+<p><b>Não assistidos:</b> ${naoAssistidos.length}</p>
 
-<p>Média geral: ${mediaGeral.toFixed(2)}</p>
+<p><b>Média geral:</b> ${mediaGeral.toFixed(2)}</p>
 
 <h3>Top 3</h3>
 
