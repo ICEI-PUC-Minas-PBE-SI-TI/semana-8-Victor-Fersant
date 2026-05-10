@@ -10,7 +10,7 @@ Nesta atividade, você irá fazer exercícios de programação com o objetivo de
 
 ## Prints do console do navegador
 
-LISTAGEM DE TÍTULOS
+## LISTAGEM DE TÍTULOS
 ![Listagem](public/titulos.JPG)
 
 <<  COLOQUE A IMAGEM - CÁLCULO DE MÉDIAS - AQUI >>
