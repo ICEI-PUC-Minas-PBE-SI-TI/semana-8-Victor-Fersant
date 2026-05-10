@@ -5,19 +5,27 @@ Nesta atividade, você irá fazer exercícios de programação com o objetivo de
 
 ## Informações Gerais
 
-- Nome: 
-- Matrícula: 
+- Nome: Victor Fernandes dos Santos
+- Matrícula: 928768
 
 ## Prints do console do navegador
+
+---
 
 ## LISTAGEM DE TÍTULOS
 ![Listagem](public/titulos.JPG)
 
-<<  COLOQUE A IMAGEM - CÁLCULO DE MÉDIAS - AQUI >>
+---
+
+## CÁLCULO DE MÉDIAS
 ![médias](public/medias.JPG)
 
-<<  COLOQUE A IMAGEM - RESUMO DE VERIFICAÇÕES (SOME E EVERY) - AQUI >>
+---
+
+## RESUMO DE VERIFICAÇÕES (SOME E EVERY)
 ![verificações](public/verificacao.JPG)
 
-<<  COLOQUE A IMAGEM - PÁGINA COM O RESUMO - AQUI >>
+---
+
+## PÁGINA COM O RESUMO
 ![resumo](public/pagina.JPG)
